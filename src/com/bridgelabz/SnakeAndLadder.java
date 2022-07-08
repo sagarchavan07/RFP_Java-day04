@@ -8,10 +8,10 @@ public class SnakeAndLadder {
         int dieNumber, option;
         int position=StART_POSITION;
 
-        dieNumber=rollDie();
-        System.out.println("Die Number = "+dieNumber);
-
         while (position<100){
+            dieNumber=rollDie();
+            System.out.println("Die Number = "+dieNumber);
+
             option=checkOption();
 
             switch (option){
@@ -30,6 +30,8 @@ public class SnakeAndLadder {
 
             if (position < 0){
                 position=0;
+            } else if (position>100) {
+                position-=dieNumber;
             }
             System.out.println("current position : "+position);
         }
